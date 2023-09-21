@@ -6,6 +6,7 @@ using System.Windows.Media;
 using ClinicApp.EntityModels;
 using System.Configuration;
 using System.Data.SqlClient;
+using ClinicApp.HelperClasses;
 
 namespace ClinicApp.XamlPages
 {
@@ -68,10 +69,11 @@ namespace ClinicApp.XamlPages
                 }
                 #endregion
                 #region Checking entered date of birth
-                if (dateOfBirth == null)
+                DateValidationHelper dateValidator = new DateValidationHelper("Дата рождения");
+                if (!dateValidator.IsValid(dateOfBirth))
                 {
                     status = false;
-                    messageBuilder.Append("Дата рождения - обязательное поле для ввода.\n");
+                    messageBuilder.Append(dateValidator.Message);
                 }
                 #endregion
                 #region Checking entered address

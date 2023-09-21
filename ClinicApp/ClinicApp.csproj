@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClinicApp</RootNamespace>
     <AssemblyName>ClinicApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -87,6 +88,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="HelperClasses\DateCheckHelper.cs" />
+    <Compile Include="HelperClasses\DateValidationHelper.cs" />
     <Compile Include="Migrations\201711021256133_InitialCreate.cs" />
     <Compile Include="Migrations\201711021256133_InitialCreate.Designer.cs">
       <DependentUpon>201711021256133_InitialCreate.cs</DependentUpon>
@@ -94,6 +97,10 @@
     <Compile Include="Migrations\201711021903154_SettingPatientPropToRequired.cs" />
     <Compile Include="Migrations\201711021903154_SettingPatientPropToRequired.Designer.cs">
       <DependentUpon>201711021903154_SettingPatientPropToRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309201435020_ChangeDatetimeToDatetime2.cs" />
+    <Compile Include="Migrations\202309201435020_ChangeDatetimeToDatetime2.designer.cs">
+      <DependentUpon>202309201435020_ChangeDatetimeToDatetime2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="HelperClasses\RegexpHelper.cs" />
@@ -155,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711021903154_SettingPatientPropToRequired.resx">
       <DependentUpon>201711021903154_SettingPatientPropToRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309201435020_ChangeDatetimeToDatetime2.resx">
+      <DependentUpon>202309201435020_ChangeDatetimeToDatetime2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

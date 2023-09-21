@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using ClinicApp.EntityModels;
+using ClinicApp.HelperClasses;
 
 namespace ClinicApp.XamlPages
 {
@@ -60,10 +61,11 @@ namespace ClinicApp.XamlPages
                 }
                 #endregion
                 #region Checking entered date of request
-                if (dateOfRequest == null)
+                DateValidationHelper dateValidator = new DateValidationHelper("Дата обращения");
+                if (!dateValidator.IsValid(dateOfRequest))
                 {
                     status = false;
-                    messageBuilder.Append("Дата обращения - обязательное поле для ввода.\n");
+                    messageBuilder.Append(dateValidator.Message);
                 }
                 #endregion
                 #region Checking entered purpose of request
@@ -98,7 +100,7 @@ namespace ClinicApp.XamlPages
                         m_request.DateOfRequest = dateOfRequest.GetValueOrDefault(DateTime.Now);
                         m_request.Purpose = purpose;
                         m_request.RequestType = requestType;
-                        m_request.Patient = new PatientCard();
+                        m_request.Patient = m_patient;
                         isSucceed = repository.ModifyRequest(m_request);
                     }
                     #endregion
