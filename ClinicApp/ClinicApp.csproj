@@ -88,6 +88,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="HelperClasses\AgeConverter.cs" />
     <Compile Include="HelperClasses\DateCheckHelper.cs" />
     <Compile Include="HelperClasses\DateValidationHelper.cs" />
     <Compile Include="Migrations\201711021256133_InitialCreate.cs" />
